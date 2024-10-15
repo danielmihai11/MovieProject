@@ -37,6 +37,11 @@
                         "link"=> "movie-3.php"),
                 )),
             array(
+                'name' => "Genres",
+                'link' => "genres.php"
+            ),
+    
+            array(
                 "name"=>"Disabled",
                 "link"=> "#", 
                 "disabled"=> true
@@ -99,29 +104,7 @@
         <?php 
         if($current_page!="index.php" && $current_page!= "contact.php"){
 
-            $movies = array(
-                array(
-                    "title" => "Titanic",
-                    "poster"=> "https://resizing.flixster.com/JBp0dumCJw-ln_HfI4rqvXOagG4=/206x305/v2/https://resizing.flixster.com/j1q6PHK0ZtbdABMQcflU-wH5-eE=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2Y1NGZmNWMyLTczMGUtNDViMS04NzdmLTRiODZiMDM0YWMwOS5qcGc=",
-                    "description"=> "James Cameron's Titanic is an epic action-packed romance set against the ill-fated maiden voyage of the R.M.S. Titanic.",
-                    "permalink"=> "movie-1.php",
-                    "id"=> "1",
-                ),
-                array(
-                    "title" => "Uncharted",
-                    "poster"=> "https://resizing.flixster.com/67QFiHz4pD23vTsQ-FXn_F8vRTU=/206x305/v2/https://resizing.flixster.com/Vu0aZW3KXbHGf7icIpKBNYdUExg=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2NlYzZhYTRkLTBlNWMtNDBiZC05N2JhLTdjMWE2ODdiNDNiZS5qcGc=",
-                    "description"=> "Street-smart thief Nathan Drake is recruited by seasoned treasure hunter Victor Sully to recover a fortune lost 500 years ago.",
-                    "permalink"=> "movie-2.php",
-                    "id"=> "2",
-                ),
-                array(
-                    "title" => "Emily in Paris",
-                    "poster"=> "https://resizing.flixster.com/ZjYt5hW2RWLF8Px-S8b348qEyDg=/206x305/v2/https://resizing.flixster.com/Clm4tCiH0ujV3a93l8fnqHnJJKI=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvZTkwMTNhMDctNThlMi00NWM4LWIwZjQtNGUyNjA4OTU2YTM3LmpwZw==",
-                    "description"=> "Chicago marketing executive Emily Cooper is hired to provide an American perspective at a marketing firm in Paris.",
-                    "permalink"=> "movie-3.php",
-                    "id"=> "3",
-                )
-            );
+            $movies = json_decode(file_get_contents('./assets/movies-list-db.json'), true)['movies'];
 
 
         }

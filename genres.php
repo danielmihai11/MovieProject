@@ -6,7 +6,7 @@ $moviesData = json_decode(file_get_contents('./assets/movies-list-db.json'), tru
 $movies = $moviesData['movies'];
 $genres = $moviesData['genres'];
 
-// Verifică dacă parametrul "genre" există în $_GET
+// Verifică dacă parametrul "genre" există în $_GET și este valid
 if (isset($_GET['genre']) && in_array($_GET['genre'], $genres)) {
     $selectedGenre = $_GET['genre'];
     
@@ -20,7 +20,7 @@ if (isset($_GET['genre']) && in_array($_GET['genre'], $genres)) {
 } else {
     // Dacă nu există gen valid, afișează toate filmele
     $filteredMovies = $movies;
-    $pageTitle = "Movies";
+    $pageTitle = "All Movies";
 }
 ?>
 
