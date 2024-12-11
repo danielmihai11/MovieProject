@@ -21,3 +21,20 @@ function check_old_movie($release_year)
       return false; //returnam false daca are 40 de ani sau mai putin
 
 }
+
+function connect_to_database() {
+    $host = "localhost";
+    $username = "php-user"; // Utilizatorul implicit al Local by Flywheel
+    $password = "php-password"; // Parola este, de obicei, goală
+    $dbname = "php-proiect";
+
+    // Creează conexiunea
+    $conn = new mysqli($host, $username, $password, $dbname);
+
+    // Verifică conexiunea
+    if ($conn->connect_error) {
+        die("Conexiunea la baza de date a eșuat: " . $conn->connect_error);
+    }
+
+    return $conn;
+}
