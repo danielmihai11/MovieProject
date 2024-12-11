@@ -19,6 +19,7 @@ function save_favorites_to_file($file_path, $data) {
 }
 
 // Procesare formular pentru adăugarea/ștergerea din favorite
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['movie_id']) && isset($_POST['favorite_action'])) {
         $movie_id = intval($_POST['movie_id']);
@@ -130,27 +131,16 @@ require_once('includes/footer.php');
 button {
     background-color: #4F75FF;
     color: white;
-    /* Text alb */
     border: none;
-    /* Eliminare border */
     padding: 10px 20px;
-    /* Spațiere interioară */
     text-align: center;
-    /* Aliniere text */
     text-decoration: none;
-    /* Fără subliniere */
     display: inline-block;
-    /* Afișare pe linie */
     font-size: 16px;
-    /* Dimensiune font */
     margin: 4px 2px;
-    /* Margini pentru spațiere */
     cursor: pointer;
-    /* Cursor pointer */
     border-radius: 5px;
-    /* Colțuri rotunjite */
     transition: background-color 0.3s ease;
-    /* Tranziție la hover */
 }
 
 button:hover {
